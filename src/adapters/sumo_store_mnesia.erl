@@ -200,7 +200,8 @@ create_schema(Schema, #{default_options := DefaultOptions} = State) ->
   ],
   Options = [
     {attributes, Attributes},
-    {index, Indexes}
+    {index, Indexes},
+    {disc_copies, [node()]}
     | DefaultOptions
   ],
   case mnesia:create_table(Name, Options) of
